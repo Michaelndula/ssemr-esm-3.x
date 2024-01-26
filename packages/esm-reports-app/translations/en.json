@@ -1,0 +1,12 @@
+{
+  "connect": "Connect",
+  "connectExplainer": "Get in touch with the community",
+  "designDocs": "Design docs",
+  "designDocsExplainer": "Read the O3 design documentation",
+  "frontendDocs": "Frontend docs",
+  "getStarted": "Get started",
+  "getStartedExplainer": "Create a frontend module from this template",
+  "learnExplainer": "Learn how to use the O3 framework",
+  "resources": "Resources",
+  "usefulLinks": "Below are some links to useful resources"
+}

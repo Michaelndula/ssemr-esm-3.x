@@ -1,0 +1,12 @@
+{
+  "connect": "Conectar",
+  "connectExplainer": "Póngase en contacto con la comunidad",
+  "designDocs": "Documentación de diseño",
+  "designDocsExplainer": "Lea la documentación de diseño de O3",
+  "frontendDocs": "Documentación de interfaz",
+  "getStarted": "Comenzar",
+  "getStartedExplainer": "Cree un módulo frontend a partir de esta plantilla",
+  "learnExplainer": "Aprenda a usar el marco O3.",
+  "resources": "Recursos",
+  "usefulLinks": "A continuación hay algunos enlaces a recursos útiles"
+}

@@ -1,0 +1,7 @@
+dist/
+node_modules/
+**/*.css
+**/*.scss
+**/*.md
+**/*.json
+packages/esm-form-entry-app/src/app/loader/loader.component.html
