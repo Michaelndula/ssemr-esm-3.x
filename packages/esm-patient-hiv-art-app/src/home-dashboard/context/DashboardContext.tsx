@@ -119,6 +119,24 @@ const DashboardProvider = ({ children }) => {
     }
   };
 
+  const formatDate = (date: Date) => {
+    const day = date.getDate();
+    const month =
+      date.getMonth() + 1 < 10
+        ? `0${date.getMonth() + 1}`
+        : date.getMonth() + 1;
+    const year = date.getFullYear();
+
+    return `${month}/${day}/${year}`;
+  };
+
+  const thirtyDaysAgo = () => {
+    const today = new Date();
+    const thirtyDaysAgo = new Date(today);
+    thirtyDaysAgo.setDate(today.getDate() - 30);
+    return formatDate(thirtyDaysAgo);
+  };
+
   /**
    * AJAX requests defined here to avoid repeating them in individual components
    */
@@ -156,24 +174,6 @@ const DashboardProvider = ({ children }) => {
   };
 
   const getNewlyEnrolledClients = async () => {
-    const formatDate = (date: Date) => {
-      const day = date.getDate();
-      const month =
-        date.getMonth() + 1 < 10
-          ? `0${date.getMonth() + 1}`
-          : date.getMonth() + 1;
-      const year = date.getFullYear();
-
-      return `${month}/${day}/${year}`;
-    };
-
-    const thirtyDaysAgo = () => {
-      const today = new Date();
-      const thirtyDaysAgo = new Date(today);
-      thirtyDaysAgo.setDate(today.getDate() - 30);
-      return formatDate(thirtyDaysAgo);
-    };
-
     await getClientData({
       url: `/ws/rest/v1/ssemr/dashboard/newClients?startDate=${thirtyDaysAgo()}&endDate=${formatDate(
         new Date()

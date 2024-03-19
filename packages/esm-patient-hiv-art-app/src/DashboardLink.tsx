@@ -27,16 +27,19 @@ function DashboardExtension({
   return (
     <ConfigurableLink
       to={`${spaBasePath}/${name}`}
-      className={`cds--side-nav__link ${navLink.match(name) && "active-left-nav-link"}`}
+      className={`cds--side-nav__link ${
+        navLink.match(name) && "active-left-nav-link"
+      }`}
     >
-      {t("patientVisits", "Patient Visits")}
+      {t("hivCareAndART", "HIV Care and ART")}
     </ConfigurableLink>
   );
 }
 
 export const createDashboardLink =
-  (dashboardLinkConfig: DashboardLinkConfig) => () => (
-    <BrowserRouter>
-      <DashboardExtension dashboardLinkConfig={dashboardLinkConfig} />
-    </BrowserRouter>
-  );
+  (dashboardLinkConfig: DashboardLinkConfig) => () =>
+    (
+      <BrowserRouter>
+        <DashboardExtension dashboardLinkConfig={dashboardLinkConfig} />
+      </BrowserRouter>
+    );

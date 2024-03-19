@@ -29,108 +29,115 @@ const HomeDashboard = () => {
     useContext(DashboardContext);
 
   return (
-    <div className={styles.parent}>
+    <>
       {/* ................Title......................... */}
-      <div className={styles.titleContainer}>
-        <Home color="green" size="24" className={styles.homeIcon} />
-        <p className={styles.titleText}>{t("home", "Home")}</p>
-        <p className={styles.dashboardText}>{t("dashboard", "Dashboard")}</p>
-      </div>
-
-      {/* ..................Tabs................. */}
-      <div className={styles.tabs}>
-        {filterTabs.map((item) => (
-          <SSEMRTab
-            index={item.index}
-            name={item.title}
-            key={item.title}
-            handler={item.filterFunction}
-            isActive={currentTopFilterIndex == item.index}
-          />
-        ))}
-        <div
-          style={{
-            width: 400,
-          }}
-        >
-          <Dropdown
-            id="filter"
-            titleText=""
-            initialSelectedItem={filterOptions[0]}
-            onChange={(evt) => {
-              setCurrentTimeFilter(evt.selectedItem.value);
-            }}
-            label=""
-            items={filterOptions}
-            itemToString={(item) => item.name}
-          />
+      <div className={styles.header}>
+        <div className={styles["left-justified-items"]}>
+          <Home color="green" size="34" className={styles.homeIcon} />
+          <div className={styles["page-labels"]}>
+            <p className={styles.title}>
+              {t("hivCareAndART", "HIV Care and ART")}
+            </p>
+            <p className={styles.subTitle}>{t("dashboard", "Dashboard")}</p>
+          </div>
         </div>
       </div>
+      <div className={styles.parent}>
+        {/* ..................Tabs................. */}
+        <div className={styles.tabs}>
+          {filterTabs.map((item) => (
+            <SSEMRTab
+              index={item.index}
+              name={item.title}
+              key={item.title}
+              handler={item.filterFunction}
+              isActive={currentTopFilterIndex == item.index}
+            />
+          ))}
+          <div
+            style={{
+              width: 400,
+            }}
+          >
+            <Dropdown
+              id="filter"
+              titleText=""
+              initialSelectedItem={filterOptions[0]}
+              onChange={(evt) => {
+                setCurrentTimeFilter(evt.selectedItem.value);
+              }}
+              label=""
+              items={filterOptions}
+              itemToString={(item) => item.name}
+            />
+          </div>
+        </div>
 
-      {/* ...................Stats.................... */}
-      <div className={styles.stats}>
-        {stats.map((stat) => (
-          <StatCard item={stat} key={stat.title} />
-        ))}
+        {/* ...................Stats.................... */}
+        <div className={styles.stats}>
+          {stats.map((stat) => (
+            <StatCard item={stat} key={stat.title} />
+          ))}
+        </div>
+
+        {/* ...............Charts....................... */}
+        <div className={styles.chartWrapper}>
+          <ChartCard>
+            <NewlyEnrolled />
+          </ChartCard>
+          <ChartCard>
+            <CurrentlyEnrolled />
+          </ChartCard>
+          <ChartCard>
+            <ActiveClients />
+          </ChartCard>
+        </div>
+
+        {/* ...............Charts....................... */}
+        <div className={styles.chartWrapper}>
+          <ChartCard>
+            <AdultARTRegimen />
+          </ChartCard>
+          <ChartCard>
+            <ChildArtRegimen />
+          </ChartCard>
+          <ChartCard>
+            <UnderCommunityCare />
+          </ChartCard>
+        </div>
+
+        <ChartCard>
+          <Waterfall />
+        </ChartCard>
+
+        {/* ...............Charts....................... */}
+        <div className={styles.twoGridChartWrapper}>
+          <ChartCard>
+            <DueForViralLoad />
+          </ChartCard>
+          <ChartCard>
+            <ViralLoadSamples />
+          </ChartCard>
+        </div>
+
+        {/* ...............Charts....................... */}
+        <div className={styles.chartWrapper}>
+          <ChartCard>
+            <ViralLoadResults />
+          </ChartCard>
+          <ChartCard>
+            <ViralLoadCoverage />
+          </ChartCard>
+          <ChartCard>
+            <ViralLoadSuppression />
+          </ChartCard>
+        </div>
+
+        <ChartCard>
+          <HighViralLoadCascade />
+        </ChartCard>
       </div>
-
-      {/* ...............Charts....................... */}
-      <div className={styles.chartWrapper}>
-        <ChartCard>
-          <NewlyEnrolled />
-        </ChartCard>
-        <ChartCard>
-          <CurrentlyEnrolled />
-        </ChartCard>
-        <ChartCard>
-          <ActiveClients />
-        </ChartCard>
-      </div>
-
-      {/* ...............Charts....................... */}
-      <div className={styles.chartWrapper}>
-        <ChartCard>
-          <AdultARTRegimen />
-        </ChartCard>
-        <ChartCard>
-          <ChildArtRegimen />
-        </ChartCard>
-        <ChartCard>
-          <UnderCommunityCare />
-        </ChartCard>
-      </div>
-
-      <ChartCard>
-        <Waterfall />
-      </ChartCard>
-
-      {/* ...............Charts....................... */}
-      <div className={styles.twoGridChartWrapper}>
-        <ChartCard>
-          <DueForViralLoad />
-        </ChartCard>
-        <ChartCard>
-          <ViralLoadSamples />
-        </ChartCard>
-      </div>
-
-      {/* ...............Charts....................... */}
-      <div className={styles.chartWrapper}>
-        <ChartCard>
-          <ViralLoadResults />
-        </ChartCard>
-        <ChartCard>
-          <ViralLoadCoverage />
-        </ChartCard>
-        <ChartCard>
-          <ViralLoadSuppression />
-        </ChartCard>
-      </div>
-
-      <ChartCard>
-        <HighViralLoadCascade />
-      </ChartCard>
-    </div>
+    </>
   );
 };
 
