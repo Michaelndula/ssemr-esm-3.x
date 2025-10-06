@@ -1,5 +1,5 @@
 {
-  "name": "@ssemr/esm-ssem3.x-apps",
+  "name": "@ssemrapp/ssemr-esm-3.x-apps",
   "private": true,
   "workspaces": [
     "packages/*"
@@ -73,6 +73,9 @@
   },
   "packageManager": "yarn@4.9.1",
   "dependencies": {
+    "@carbon/charts": "^1.23.17",
+    "@carbon/charts-react": "^1.23.17",
+    "@carbon/react": "^1.91.0",
     "@hookform/resolvers": "^3.3.1",
     "@ssemr/esm-route-protection-app": "1.1.2",
     "html2canvas": "^1.4.1",
