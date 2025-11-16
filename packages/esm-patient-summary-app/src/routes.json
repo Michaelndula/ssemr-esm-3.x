@@ -42,6 +42,15 @@
         "columnSpan": 4
       }
     },
+        {
+      "name": "patient-viral-load-eligibility",
+      "slot": "patient-chart-summary-dashboard-slot",
+      "component": "PatientViralLoadEligibility",
+      "order": 0,
+      "meta": {
+        "fullWidth": true
+      }
+    },
     {
       "name": "linkage-to-chw-summary",
       "slot": "patient-chart-summary-dashboard-slot",

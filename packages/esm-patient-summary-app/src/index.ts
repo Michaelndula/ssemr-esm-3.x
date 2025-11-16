@@ -12,8 +12,7 @@ import VlPanelComponent from "./vl-history-widget/vl-panel.component";
 import CommunityLinkagePanelComponent from "./community-linkage-widget/community-linkage-panel.component";
 import ClientFamilyInfoPanelComponent from "./family-history-information-widget/more-client-info-panel.component";
 import IndexFamilyHistoryPanelComponent from "./index-family-history-information-widget/index-family-history-panel.component";
-import NotificationsPanelComponent from "./notifications-widget/notifications-panel.component";
-import Notifications from "./notifications/notifications.component";
+import ViralLoadEligibility from "./viral-load-eligibility/viral-load-sample-eligibility.component";
 
 const moduleName = "@ssemr/esm-patient-panel-app";
 
@@ -45,6 +44,11 @@ export const patientProgramSummary = getSyncLifecycle(
 );
 
 export const patientVlhistory = getSyncLifecycle(VlPanelComponent, options);
+
+export const PatientViralLoadEligibility = getSyncLifecycle(
+  ViralLoadEligibility,
+  options
+);
 
 export const patientData = getSyncLifecycle(
   ClientFamilyInfoPanelComponent,

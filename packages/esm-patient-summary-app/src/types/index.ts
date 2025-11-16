@@ -219,3 +219,10 @@ export interface UpdateObs {
     value: string | number;
   }>;
 }
+
+export type VLRow = {
+  id: string;
+  dateSampleCollected: string;
+  dateVLRecieved: string;
+  lastVlRecieved: string;
+};
